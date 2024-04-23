@@ -1,0 +1,14 @@
+---
+const { title, subtitle, desc, src, thumbnail } = Astro.props;
+---
+
+<a href={src} class="bg-white border-gray-300 border rounded-md shadow-md p-5 block mb-10 md:mb-0 md:flex md:gap-10 md:items-center hover:shadow-lg transition-all hover:-translate-y-1.5 hover:bg-gray-100">
+  <img src={thumbnail} alt="" width="313" class="mb-6 md:mb-0"/>
+  <div class="text-left">
+    <h3 class="text-2xl font-bold pb-3">{title}</h3>
+    {subtitle && 
+    <h4>{subtitle}</h4>
+    }
+    <p class="text-[16px] leading-6">{desc}</p>
+  </div>
+</a>

@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPost from '../../components/BlogPost.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const posts = await getCollection('blog');
+---
+
+<BlogLayout title="Blog">
+  <div class="flex flex-col items-start justify-center w-full max-w-5xl mx-auto mb-16">
+    <div class="flex flex-col w-full text-center gap-6 mb-16">
+      <h1 class="font-serif dark:text-gray-200 text-gray-700 h1 mb-0">Howdy, friend.</h1>
+      <p class="max-w-2xl text-gray-500 dark:text-gray-300 mx-auto"> My name is Annie, and I write about software engineering, product development, and tech-shenanigans.</p>
+    </div>
+    <div class="flex flex-col px-6 md:grid md:grid-cols-2 gap-8">
+      {posts.slice(0, 10).map(post => (
+        <BlogPost key={post.slug} post={post} />
+      ))}
+    </div>
+  </div>
+</BlogLayout>

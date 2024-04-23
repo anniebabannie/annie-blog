@@ -1,123 +1,202 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import ExperienceDescription from '../components/ExperienceDescription.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import WritingLink from '../components/WritingLink.astro';
+
+import logo from "../images/annie-sexton-logo.png";
+import avatar from "../images/annie-avatar-red-head.jpg";
+import typistPic from "../images/typist-screenshot.jpg";
+import genshoPic from "../images/gensho-screenshot.jpg";
+import thumbnailGit from "../images/thumbnail-git-organized.png";
+import thumbnailRubyConf from "../images/thumbnail-rubyconf2018.png";
+import annie1 from "../images/annie-1.jpg";
+import { Image } from 'astro:assets';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			viewBox="0 0 495 623"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M167.19 364.254C83.4786 364.254 0 404.819 0 404.819C0 404.819 141.781 19.4876 142.087 18.7291C146.434 7.33701 153.027 0 162.289 0H332.441C341.703 0 348.574 7.33701 352.643 18.7291C352.92 19.5022 494.716 404.819 494.716 404.819C494.716 404.819 426.67 364.254 327.525 364.254L264.41 169.408C262.047 159.985 255.147 153.581 247.358 153.581C239.569 153.581 232.669 159.985 230.306 169.408L167.19 364.254ZM160.869 530.172C160.877 530.18 160.885 530.187 160.894 530.195L160.867 530.181C160.868 530.178 160.868 530.175 160.869 530.172ZM136.218 411.348C124.476 450.467 132.698 504.458 160.869 530.172C160.997 529.696 161.125 529.242 161.248 528.804C161.502 527.907 161.737 527.073 161.917 526.233C165.446 509.895 178.754 499.52 195.577 500.01C211.969 500.487 220.67 508.765 223.202 527.254C224.141 534.12 224.23 541.131 224.319 548.105C224.328 548.834 224.337 549.563 224.347 550.291C224.563 566.098 228.657 580.707 237.264 593.914C245.413 606.426 256.108 615.943 270.749 622.478C270.593 621.952 270.463 621.508 270.35 621.126C270.045 620.086 269.872 619.499 269.685 618.911C258.909 585.935 266.668 563.266 295.344 543.933C298.254 541.971 301.187 540.041 304.12 538.112C310.591 533.854 317.059 529.599 323.279 525.007C345.88 508.329 360.09 486.327 363.431 457.844C364.805 446.148 363.781 434.657 359.848 423.275C358.176 424.287 356.587 425.295 355.042 426.275C351.744 428.366 348.647 430.33 345.382 431.934C303.466 452.507 259.152 455.053 214.03 448.245C184.802 443.834 156.584 436.019 136.218 411.348Z"
-				fill="url(#paint0_linear_1805_24383)"></path>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Annie Sexton">
+	<nav class="flex gap-5 items-center p-10 absolute min-w-full">
+		<a href="/blog" class="text-gray-400 uppercase text-lg tracking-widest">Blog</a>
+	</nav>
+	<div class="flex flex-col gap-14 items-center text-center justify-center md:py-56 px-10 py-24">
+		<Image src={logo} class="max-w-[644px] max-h-[76px] w-full" alt="Annie Sexton logo"/>
+		<p class="text-gray-500 uppercase tracking-wider md:text-xl text-base">Developer Advocate &nbsp;•&nbsp; Software Engineer</p>
+		<div class="max-w-[650px] p-6 rounded-lg bg-gray-50 border-gray-200 border flex md:flex-row flex-col gap-10 items-center md:text-left text-center">
+			<Image src={avatar} width="138" alt="Headshot of Annie Sexton, Product Developer, Designer and Engineer" class="rounded-lg" />
+			<div class="text-md leading-7">I'm a multi-faceted <strong>software developer</strong> and <strong>developer advocate</strong> with over 11 years of experience working on everything from software engineering to UX design. I've spent most of my career in the <strong>wonderful world of developer tooling</strong>, and I love working with talented teams to craft unparalleled user experiences.</div>
+		</div>
+	</div>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+	<div class="bg-[url('assets/light-gradient-bg.png')] bg-cover shadow-inner px-10 py-20 w-full">
+		<div class="container mx-auto flex flex-col gap-20 md:gap-40">
+			<div class="grid gap-10 lg:grid-cols-2 md:gap-24 items-center">
+				<a href="https://typist.app" target="_blank">
+					<Image src={typistPic} alt="Screenshot of Typist website" class="rounded-lg shadow-md shadow-gray-500 ring-4 ring-white" />
+				</a>
+				<div>
+					<div class="md:flex md:justify-between mb-3 items-center">
+						<p class="text-4xl uppercase font-bold">Typist</p>
+						<a href="https://typist.app" target="_blank" class="text-2xl">https://typist.app</a>
+					</div>
+					<div class="mb-10 flex items-center gap-4">
+						<div class="uppercase">Founder</div>
+						<div>•</div>
+						<time class="">Nov 2020 - Nov 2022</time>
+					</div>
+					<div class="paragraph">
+						<p class="text-xl leading-8">Typist is a refreshingly simple note-taking app built for developers, featuring auto-rendered Github-flavored markdown, ⌘K quick search, code block syntax highlighting, and keyboard shortcuts for days.</p>
+						<p class="text-xl leading-8">I've been on a long journey in search of the perfect writing app: something simple enough to quickly jot down notes, but equipped with the features I appreciate as a developer, such as markdown, code block syntax highlighting, and a myriad of keyboard shortcuts. Many apps came close, but each left me wanting. After years of searching, I decided to roll up my sleeves and build something myself.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid gap-10 lg:grid-cols-2 md:gap-24 items-center">
+				<div class="order-last lg:order-first">
+					<div class="md:flex md:justify-between mb-3 items-center">
+						<p class="text-4xl uppercase font-bold">Gensho</p>
+						<a href="https://genshoapp.com" target="_blank" class="text-2xl">https://genshoapp.com</a>
+					</div>
+					<div class="mb-10 flex items-center gap-4">
+						<div class="uppercase">Founder</div>
+						<div>•</div>
+						<time class="">Mar 2015 - Apr 2017</time>
+					</div>
+					<div class="paragraph">
+						<p>Gensho is a tool that helps users build foreign language flashcards quickly by looking up words as you highlight them. How it works: Copy and paste in any foreign text (anything you'd like to study from, like song lyrics, news articles, etc). Then simply highlight the words you don't know. You can then download that list of words and their definitions, and upload them to literally any flashcard program. Supported languages: Japanese, Spanish, French, German, and Italian.</p>
+						<p>Designed, developed and marketed a SaaS product from the ground up, built in Ruby on Rails and ReactJS.</p>
+						<p>Gensho was a passion project of mine that I eventually turned into a full-fledge SaaS product, and now boasts a healthy following of over 2000 users.</p>
+					</div>
+				</div>
+				<a href="https://genshoapp.com" target="_blank">
+					<Image src={genshoPic} alt="Screenshot of Gensho website" class="rounded-lg shadow-md shadow-gray-500 ring-4 ring-white" />
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-heropattern bg-cover shadow-inner px-10 py-40 w-full">
+		<div class="max-w-[900px] text-center mx-auto paragraph">
+		<h2 class="text-center text-4xl mb-20 uppercase font-bold">Technical Writing</h2>
+
+			<div class="md:flex flex-col gap-5">
+
+
+				<WritingLink
+					title="Demystifying Docker for JavaScript"
+					desc="Dockerfiles for JavaScript applications can range quite a bit – from two lines to fifty. What gives? This complexity can drive some developers away from really understanding this powerful tool, so today, I’d like to demystify Docker by examining a sample Dockerfile for a JavaScript application. This should be a useful resource, regardless of what JS framework you work in."
+					src="https://fly.io/javascript-journal/demystify-docker-js/"
+					thumbnail={"https://fly.io/javascript-journal/demystify-docker-js/assets/demystify-docker-js-cover.webp"}
+				/>
+
+				<WritingLink
+					title="Delegating tasks to Fly Machines"
+					desc="There are many ways to delegate work in web applications, from using background workers to serverless architecture. In this article, we explore a new machine pattern that takes advantage of Fly Machines and distinct process groups to make quick work of resource-intensive tasks.                "
+					src="https://fly.io/blog/delegate-tasks-to-fly-machines/"
+					thumbnail={"https://fly.io/blog/delegate-tasks-to-fly-machines/assets/delegate-tasks-to-fly-machines-cover.webp"}
+				/>
+
+				<WritingLink
+					title="TALK: The Dangers of Tribal Knowledge"
+					subtitle="RubyConf 2018"
+					desc="Are you constantly tapped on the shoulder for answers? Tired of being the Google for your team? Or perhaps you’re the new kid, having to ask a dozen different people to find answers to all your questions? These are the consequences of tribal knowledge..."
+					src="https://www.youtube.com/watch?v=o-JL-so5Gm8&t=4s"
+					thumbnail={thumbnailRubyConf}
+				/>
+
+				<WritingLink
+					title="Git Organized: A Better Git Flow"
+					desc="Imagine this: you’ve been paged to investigate a production incident, and after some digging, you identify the commit with the breaking code. You decide to revert the change. Unfortunately, in doing so, a new bug is introduced! As it turns out, hidden...."
+					src="https://render.com/blog/git-organized-a-better-git-flow"
+					thumbnail={thumbnailGit}
+				/>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="bg-[url('assets/dark-gradient-bg.png')] bg-cover shadow-inner px-10 py-40 w-full">
+		<div class="max-w-[900px] text-center mx-auto paragraph">
+			<div class="flex gap-8 justify-center w-full mb-10">
+				<Image src={annie1} alt="" class="rounded-lg w-48 ring-white ring-2 shadow-lg" />
+			</div>
+			<p class="text-white">During my 11 years working as an engineer, I’ve fallen in love with every aspect of product development, from programming, to strategy, to design. While my roots are in development, I’ve collected a wide breadth of skills across many areas of expertise, thanks to my endless curiosity and hunger for learning.</p>
+			<p class="text-white">Outside of work I love to travel, cook and write fiction. I was born and raised in the heart of Texas in Austin, and in 2019, after a considerable amount of globe-trotting, I decided to make a home for myself in the lush Pacific Northwest, in Portland, Oregon.</p>
+		</div>
+	</div>
+
+	<div class="bg-[url('assets/light-gradient-bg.png')] bg-cover shadow-inner px-10 py-20 w-full">
+		<div class="max-w-[800px] mx-auto">
+			<h2 class="text-center text-2xl mb-40 mt-20 uppercase opacity-60">Work History</h2>
+
+			<ExperienceItem
+				company="Fly.io"
+				companySubtitle="Deploy your apps globally in seconds"
+			>
+				<ExperienceDescription title="JavaScript Specialist & Developer Advocate" duration="Nov 2023 - Current">
+					<p>
+						I work with the JavaScript developer community to help them understand how to use Fly.io to deploy their apps globally in seconds. I also work with the product team to help them understand the needs of the developer community.
+					</p>
+				</ExperienceDescription>
+			</ExperienceItem>
+			<ExperienceItem
+				company="Render"
+				companySubtitle="Platform-as-a-Service to build and host web services"
+			>
+				<ExperienceDescription title="Product Lead & UX Engineer" duration="Aug 2021 - Nov 2022">
+					<p>Led cross-disciplinary teams to develop platform features that attracted businesses to migrate their applications from our top competitor.</p>
+					<p>Worked directly with CEO to plan, define and build features using TypeScript, ReactJS, and GraphQL. Conducted competitive analysis reports to inform new feature development.</p>
+				</ExperienceDescription>
+			</ExperienceItem>
+
+			<ExperienceItem
+				company="Heroku"
+				companySubtitle="Salesforce.com"
+			>
+				<ExperienceDescription title="Product Analyst" duration="Apr 2019 - Jul 2021">
+					<p>Developed initial strategy and roadmap for supporting a new product offering (Salesforce Functions)</p>
+					<p>Conducted customer research to identify user needs using data from internal support metrics and customer feedback</p>
+					<p>Identified customer pain points and developed tools to improve self-service, reducing ticket load on Support</p>
+					<p>Designed training material for new support team</p>
+				</ExperienceDescription>
+				<ExperienceDescription title="Senior Technical Support Engineer" duration="Aug 2016 - Apr 2019">
+					<p>Provided in-depth support for Heroku customers on a wide range of technical topics, including performance issues, application outages, and development best practices</p>
+					<p>Assisted strategic accounts during app outages</p>
+					<p>Developed onboarding material for Heroku support team</p>
+					<p>Curated and improved technical documentation</p>
+				</ExperienceDescription>
+			</ExperienceItem>
+
+
+			<ExperienceItem
+				company="Digital Telepathy"
+				companySubtitle="Digital web agency based in San Diego"
+			>
+				<ExperienceDescription title="Full-stack Engineer & Account Manager" duration="May 2014 - Jul 2016">
+					<p>Worked with clients to define project requirements, development roadmap, and acceptance criteria. </p>
+					<p>Managed development process from initial concept through site launch.</p>
+					<p>Built responsive marketing sites featuring rich interactions built-in JavaScript and CSS.</p>
+				</ExperienceDescription>
+			</ExperienceItem>
+			<div class="grid md:grid-cols-12 md:gap-12">
+				<div class="col-span-4"> </div>
+				<div class="col-span-8">
+					<div class="bg-gradient-to-b h-44 from-teal-600 to-transparent w-[4px]"> </div>
+				</div>
+			</div>
+
+			<div class="text-center text-2xl mt-20">For a complete work history, see my <a href="https://www.linkedin.com/in/annie-sexton-11472a46/" target="_blank">LinkedIn profile</a>.</div>
+		</div>
+	</div>
+
+	
+	<div class="flex items-center justify-center py-20">
+		<div class="flex justify-center uppercase">
+			<a href="https://typist.app" target="_blank">Typist App</a>
+			<div class="text-teal-600 mx-4">•</div>
+			<a href="https://www.linkedin.com/in/annie-sexton-11472a46/" target="_blank">LinkedIn</a>
+			<div class="text-teal-600 mx-4">•</div>
+			<a href="https://twitter.com/_anniebabannie_" target="_blank">Twitter</a>
+		</div>
+	</div>
+</Layout>

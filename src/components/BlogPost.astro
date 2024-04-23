@@ -1,0 +1,22 @@
+---
+const { post } = Astro.props;
+new Date(post.publishDate).toDateString()
+---
+
+<a href={`/blog/${post.slug}`} class="w-full my-2 no-underline flex flex-col bg-white dark:bg-gray-900 border border-solid border-gray-100 dark:border-gray-950 shadow hover:shadow-md transition-shadow rounded-lg">
+  <div class="p-4">
+    {post.data.image && 
+      <img class="rounded-lg" src={`${import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3}/${import.meta.env.PUBLIC_BUCKET_NAME}/blog/2024/${post.slug}/${post.data.image}`} alt="" />
+    }
+    {!post.data.image &&
+      <div class="w-full bg-gray-200 rounded-lg h-[219px]"></div>
+    }
+  </div>
+  <div class="px-8 pb-8 pt-3 flex flex-col gap-5">
+    <h2 class="w-full text-3xl font-bold text-gray-700 dark:text-gray-200 font-serif">
+      {post.data.title}
+    </h2>
+    {post.data.excerpt && <p class="text-gray-500 dark:text-gray-400 text-base">{post.data.excerpt}...</p>}
+    <time class="text-xs text-teal-600" datetime={post.data.publishDate}>{new Date(post.data.publishDate).toDateString()}</time>
+  </div>
+</a>

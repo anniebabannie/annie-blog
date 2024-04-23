@@ -12,7 +12,6 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
@@ -35,11 +34,13 @@ RUN npm prune --omit=dev
 
 
 # Final stage for app image
-FROM nginx
+FROM base
 
 # Copy built application
-COPY --from=build /app/dist /usr/share/nginx/html
-
+COPY --from=build /app /app
+ENV HOST=0.0.0.0
+ENV PORT=4321
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 80
-CMD [ "/usr/sbin/nginx", "-g", "daemon off;" ]
+EXPOSE 4321
+# CMD [ "/usr/sbin/nginx", "-g", "daemon off;" ]
+CMD [ "node", "./dist/server/entry.mjs" ]

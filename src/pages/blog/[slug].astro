@@ -1,0 +1,33 @@
+---
+import { getEntry } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const {slug} = Astro.params;
+const post = await getEntry('blog', slug as string);
+if (post === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await post.render();
+---
+
+<BlogLayout title={post?.data.title || 'Annie Sexton Blog'}>
+{post &&
+  <article class="post flex flex-col items-start justify-center mb-16 px-6">
+    <div class="w-full max-w-2xl mx-auto">
+      <h1 class="font-serif dark:text-gray-200 text-gray-700">{post.data.title}</h1>
+        <div class="text-center mb-8">
+          <time class="text-sm text-gray-400" datetime={post.data.publishDate}>Written and illustrated by Annie Sexton • {new Date(post.data.publishDate).toDateString()}</time>
+        </div>
+    </div>
+    <div class="w-full max-w-4xl mx-auto">
+      <img class="rounded-lg mb-10 mt-5 shadow-lg object-cover object-center" src={`${import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3}/${import.meta.env.PUBLIC_BUCKET_NAME}/blog/2024/${slug}/${post.data.image}`} alt={post.data.image_alt} />
+    </div>
+    <div class="w-full max-w-2xl mx-auto">
+      <div class="w-full mt-4 dark:text-gray-200 text-gray-700 max-w-none">
+        <Content/>
+      </div>
+    </div>
+  </article>
+}
+</BlogLayout>
