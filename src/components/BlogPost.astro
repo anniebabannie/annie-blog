@@ -1,12 +1,14 @@
 ---
 const { post } = Astro.props;
 new Date(post.publishDate).toDateString()
+const s3Url = import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3 ? import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3 : process.env.PUBLIC_AWS_ENDPOINT_URL_S3;
+const bucketName = import.meta.env.PUBLIC_BUCKET_NAME ? import.meta.env.PUBLIC_BUCKET_NAME : process.env.PUBLIC_BUCKET_NAME;
 ---
 
 <a href={`/blog/${post.slug}`} class="w-full my-2 no-underline flex flex-col bg-white dark:bg-gray-900 border border-solid border-gray-100 dark:border-gray-950 shadow hover:shadow-md transition-shadow rounded-lg">
   <div class="p-4">
     {post.data.image && 
-      <img class="rounded-lg" src={`${import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3}/${import.meta.env.PUBLIC_BUCKET_NAME}/blog/2024/${post.slug}/${post.data.image}`} alt="" />
+      <img class="rounded-lg" src={`${s3Url}/${bucketName}/blog/2024/${post.slug}/${post.data.image}`} alt="" />
     }
     {!post.data.image &&
       <div class="w-full bg-gray-200 rounded-lg h-[219px]"></div>

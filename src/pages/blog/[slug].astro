@@ -9,6 +9,8 @@ if (post === undefined) {
 }
 
 const { Content } = await post.render();
+const s3Url = import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3 ? import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3 : process.env.PUBLIC_AWS_ENDPOINT_URL_S3;
+const bucketName = import.meta.env.PUBLIC_BUCKET_NAME ? import.meta.env.PUBLIC_BUCKET_NAME : process.env.PUBLIC_BUCKET_NAME;
 ---
 
 <BlogLayout title={post?.data.title || 'Annie Sexton Blog'}>
@@ -21,7 +23,7 @@ const { Content } = await post.render();
         </div>
     </div>
     <div class="w-full max-w-4xl mx-auto">
-      <img class="rounded-lg mb-10 mt-5 shadow-lg object-cover object-center" src={`${import.meta.env.PUBLIC_AWS_ENDPOINT_URL_S3}/${import.meta.env.PUBLIC_BUCKET_NAME}/blog/2024/${slug}/${post.data.image}`} alt={post.data.image_alt} />
+      <img class="rounded-lg mb-10 mt-5 shadow-lg object-cover object-center" src={`${s3Url}/${bucketName}/blog/2024/${slug}/${post.data.image}`} alt={post.data.image_alt} />
     </div>
     <div class="w-full max-w-2xl mx-auto">
       <div class="w-full mt-4 dark:text-gray-200 text-gray-700 max-w-none">
