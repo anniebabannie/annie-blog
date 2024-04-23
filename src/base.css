@@ -65,13 +65,16 @@
   }
   
   .post h1, .h1 {
-    @apply text-center text-5xl font-bold mb-8 leading-tight tracking-normal;
+    @apply text-center text-5xl font-bold mb-8 leading-tight;
   }
 
   .post h2, .h2 {
-    @apply my-2 text-4xl font-bold mb-5 tracking-normal;
+    @apply my-2 text-4xl font-bold mb-5;
   }
   
+  .post h1, .post h2 {
+    @apply font-serif tracking-wide;
+  }
   .bg-dark-mode-gradient {
     background-image: linear-gradient(to bottom, #06102c, #011831, #001f36, #002639, #002c3c, #032f41, #073147, #0e344c, #233152, #3a2c51, #4e2549, #5d1e3a);
   }
