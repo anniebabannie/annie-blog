@@ -1,11 +1,6 @@
 ---
 import { getEntries } from 'astro:content';
 
-const blogPost = await getEntry('blog', 'welcome');
-
-// Resolve a singular reference
-const author = await getEntry(blogPost.data.author);
-// Resolve an array of references
 const relatedPosts = await getEntries(blogPost.data.relatedPosts);
 ---
 
