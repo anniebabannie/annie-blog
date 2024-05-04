@@ -18,12 +18,12 @@ When I came back to tech towards the end of 2023, I had run out of money – twi
 
 Outside of work, I spent much of my free time building Typist, back when it was my current infatuation. It was almost a compulsion, how much I was drawn to work on it. It was thrilling, and also, it sucked the life out of me.
 
-I am too fucking old for that shit now. I refuse to put all of my joy-eggs in that engineering basket. I want to build this app again because I want the thing, but I refuse to get my hopes up, refuse to get so caught up in the future of what it could be that I miss the everyday delights of small progress. So, in order to protect myself, I am enforcing four rules:
+**I am too fucking old for that shit now.** I refuse to put all of my joy-eggs in that engineering basket. I refuse to get my hopes up, refuse to get so caught up in the future of what it _could_ be that I miss the everyday delights of small progress. So, in order to protect myself, I am enforcing four rules:
 
 1. Whatever I build, it must be open-source
 1. Monetization is off-limits
 1. I must document my progress publically
-1. Have fun
+1. Do it for fun
 
 ## How it's going, and what's different
 
