@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import ExperienceDescription from '../components/ExperienceDescription.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
 import WritingLink from '../components/WritingLink.astro';
@@ -13,6 +12,7 @@ import thumbnailGit from "../images/thumbnail-git-organized.png";
 import thumbnailRubyConf from "../images/thumbnail-rubyconf2018.png";
 import annie1 from "../images/annie-1.jpg";
 import { Image } from 'astro:assets';
+import Test from '../components/Test.astro';
 ---
 
 <Layout title="Annie Sexton">
@@ -80,8 +80,6 @@ import { Image } from 'astro:assets';
 		<h2 class="text-center text-4xl mb-20 uppercase font-bold">Technical Writing</h2>
 
 			<div class="md:flex flex-col gap-5">
-
-
 				<WritingLink
 					title="Demystifying Docker for JavaScript"
 					desc="Dockerfiles for JavaScript applications can range quite a bit – from two lines to fifty. What gives? This complexity can drive some developers away from really understanding this powerful tool, so today, I’d like to demystify Docker by examining a sample Dockerfile for a JavaScript application. This should be a useful resource, regardless of what JS framework you work in."

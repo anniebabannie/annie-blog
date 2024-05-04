@@ -1,6 +1,6 @@
 ---
 title: Semantic CSS vs Tailwind Components
-publishDate: '2024-03-12'
+publishDate: 2024-03-12
 excerpt: Often semantic CSS and Tailwind are seen as opposites approaches, but could they have more in common than we think?
 image: semantic-css-vs-tailwind-components-thumb.jpg
 image_alt: An illustration of two fighter women facing each other as if at the beginnging of a fighter game match. Under each woman, is a bit of code depicting, on the left, semantic class syntax of "dot button". On the right, it's the React-style component syntax of "<Button/>". The letters V.S. are stamped right in the middle of the image.

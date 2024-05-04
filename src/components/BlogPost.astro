@@ -11,11 +11,11 @@ const bucketName = import.meta.env.PUBLIC_BUCKET_NAME ? import.meta.env.PUBLIC_B
       <img class="rounded-lg" src={`${s3Url}/${bucketName}/blog/2024/${post.slug}/${post.data.image}`} alt="" />
     }
     {!post.data.image &&
-      <div class="w-full bg-gray-200 rounded-lg h-[219px]"></div>
+      <div class="w-full bg-gray-200 rounded-lg h-[246px] w-full">&nbsp;</div>
     }
   </div>
   <div class="px-8 pb-8 pt-3 flex flex-col gap-5">
-    <h2 class="w-full text-3xl font-bold text-gray-700 dark:text-gray-200 font-serif">
+    <h2 class="w-full text-3xl text-gray-700 dark:text-gray-200 font-serif">
       {post.data.title}
     </h2>
     {post.data.excerpt && <p class="text-gray-500 dark:text-gray-400 text-base">{post.data.excerpt}...</p>}

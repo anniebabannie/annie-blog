@@ -19,12 +19,14 @@ const bucketName = import.meta.env.PUBLIC_BUCKET_NAME ? import.meta.env.PUBLIC_B
     <div class="w-full max-w-2xl mx-auto">
       <h1 class="font-serif dark:text-gray-200 text-gray-700">{post.data.title}</h1>
         <div class="text-center mb-8">
-          <time class="text-sm text-gray-400" datetime={post.data.publishDate}>Written and illustrated by Annie Sexton • {new Date(post.data.publishDate).toDateString()}</time>
+          <time class="text-sm text-gray-400" datetime={new Date(post.data.publishDate).toDateString()}>{`Written ${post.data.image ? 'and illustrated' : ''}`} by Annie Sexton • {new Date(post.data.publishDate).toDateString()}</time>
         </div>
     </div>
-    <div class="w-full max-w-4xl mx-auto">
-      <img class="rounded-lg mb-10 mt-5 shadow-lg object-cover object-center" src={`${s3Url}/${bucketName}/blog/2024/${slug}/${post.data.image}`} alt={post.data.image_alt} />
-    </div>
+    {post.data.image &&
+      <div class="w-full max-w-4xl mx-auto">
+        <img class="rounded-lg mb-10 mt-5 shadow-lg object-cover object-center" src={`${s3Url}/${bucketName}/blog/2024/${slug}/${post.data.image}`} alt={post.data.image_alt} />
+      </div>
+    }
     <div class="w-full max-w-2xl mx-auto">
       <div class="w-full mt-4 dark:text-gray-200 text-gray-700 max-w-none">
         <Content/>

@@ -1,7 +1,7 @@
 ---
 title: 3 Brand names that nailed it – and why
 excerpt: Choosing a name for your brand is extremely important in the successful marketing of a product. Today, let's examine 3 companies that just got it right.
-publishDate: '2024-03-02'
+publishDate: 2024-03-02
 image: 3-brand-names-that-nailed-it-and-why-thumb.jpg
 image_alt: An illustration of a (in the foreground) statue of Ulysses/Odysseus, in the background, the Tigris River with palm trees, and above it, the sun peaking over the horizon. Over the horizon are a couple of floating cell phones.
 tags: ["branding"]
